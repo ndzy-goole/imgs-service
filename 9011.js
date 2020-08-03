@@ -66,13 +66,7 @@ app.post('/uploadImage', (req, res) => {
     } else {
       const fileName = encodeURIComponent(req.file.filename);
       const url = `${config.imgUrl}/images/${fileName}`;
-      res.send({
-        code: 1,
-        msg: 'ok',
-        data: {
-          url
-        }
-      });
+      res.send(url);
     }
   });
 });
